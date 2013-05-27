@@ -265,6 +265,10 @@ myManagementHooks = [
   , (className =? "Empathy") --> doF (W.shift "7:Chat")
   , (className =? "Pidgin") --> doF (W.shift "7:Chat")
   , (className =? "Gimp-2.8") --> doF (W.shift "9:Pix")
+  , (className =? "Sublime Text 2") --> doF (W.shift "5:Dev")
+  , (className =? "Firefox") --> doF (W.shift "6:Web")
+  , (className =? "VirtualBox") --> doF (W.shift "0:VM")
+  , (className =? "Terminator") --> doF (W.shift "1:Term")
   ]
 
 
