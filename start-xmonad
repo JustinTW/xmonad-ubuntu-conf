@@ -97,6 +97,11 @@ stalonetray \
 # certificates and the like.
 gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh
 
+terminator &
+firefox &
+sublime-text &
+virtualbox &
+
 # Now, finally, start xmonad
 exec xmonad
 
