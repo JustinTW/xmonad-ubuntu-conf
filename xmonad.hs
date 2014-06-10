@@ -87,12 +87,12 @@ myUrgentWSRight = "}"
 myWorkspaces =
   [
     "7:Chat",  "8:Dbg", "9:Pix",
-    "4:Docs",  "5:Dev", "6:Web",
-    "1:Term",  "2:Hub", "3:Mail",
+    "4:Chrome",  "5:Hub", "6:Mail",
+    "1:Term",  "2:Dev", "3:Web",
     "0:VM",    "Extr1", "Extr2"
   ]
 
-startupWorkspace = "6:Web"  -- which workspace do you want to be on after launch?
+startupWorkspace = "1:Term"  -- which workspace do you want to be on after launch?
 
 {-
   Layout configuration. In this section we identify which xmonad
@@ -258,16 +258,20 @@ myManagementHooks = [
   resource =? "synapse" --> doIgnore
   , resource =? "stalonetray" --> doIgnore
   , className =? "rdesktop" --> doFloat
-  , (className =? "Komodo IDE") --> doF (W.shift "5:Dev")
+  , (className =? "Komodo IDE") --> doF (W.shift "2:Dev")
   , (className =? "Komodo IDE" <&&> resource =? "Komodo_find2") --> doFloat
   , (className =? "Komodo IDE" <&&> resource =? "Komodo_gotofile") --> doFloat
   , (className =? "Komodo IDE" <&&> resource =? "Toplevel") --> doFloat
   , (className =? "Empathy") --> doF (W.shift "7:Chat")
   , (className =? "Pidgin") --> doF (W.shift "7:Chat")
   , (className =? "Gimp-2.8") --> doF (W.shift "9:Pix")
-  , (className =? "Sublime Text 2") --> doF (W.shift "5:Dev")
-  , (className =? "Firefox") --> doF (W.shift "6:Web")
+  , (className =? "sublime_text") --> doF (W.shift "2:Dev")
+  , (className =? "Sublime_text") --> doF (W.shift "2:Dev")
+  , (className =? "Firefox") --> doF (W.shift "3:Web")
+  , (className =? "Google-chrome-stable") --> doF (W.shift "4:Chrome")
   , (className =? "VirtualBox") --> doF (W.shift "0:VM")
+  , (className =? "TeamViewer.exe") --> doF (W.shift "0:VM")
+  , (className =? "Wine") --> doF (W.shift "0:VM")
   , (className =? "Terminator") --> doF (W.shift "1:Term")
   ]
 
@@ -323,7 +327,7 @@ myKeys = myKeyBindings ++
   [
     ((m .|. myModMask, key), screenWorkspace sc
       >>= flip whenJust (windows . f))
-      | (key, sc) <- zip [xK_w, xK_e, xK_r] [1,0,2]
+      | (key, sc) <- zip [xK_w, xK_e, xK_r] [0,1,2]
       , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
   ]
 

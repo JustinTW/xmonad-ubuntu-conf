@@ -23,7 +23,7 @@ Config {
   -- want to be taking up the remainer of the space on the right side
   -- of your screen.
   -- position = TopW L 95, 
-  position = Static { xpos = 0 , ypos = 1055, width = 1920, height = 25 },
+  position = Static { xpos = 1920 , ypos = 1055, width = 1920, height = 25 },
 
   -- list of commands which gather information about your system for
   -- presentation in the bar. 
