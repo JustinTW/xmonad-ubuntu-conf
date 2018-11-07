@@ -267,6 +267,7 @@ myManagementHooks = [
   , (className =? "Gimp-2.8") --> doF (W.shift "9:Pix")
   , (className =? "sublime_text") --> doF (W.shift "2:Dev")
   , (className =? "Sublime_text") --> doF (W.shift "2:Dev")
+  , (className =? "code") --> doF (W.shift "2:Dev")
   , (className =? "Firefox") --> doF (W.shift "3:Web")
   , (className =? "Google-chrome-stable") --> doF (W.shift "3:Web")
   , (className =? "VirtualBox") --> doF (W.shift "0:VM")
